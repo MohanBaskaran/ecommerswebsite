@@ -7,19 +7,19 @@
 <body>
 <div id='container'>
   <div class='signup'>
-    <form action="signupAction.jsp" method="post">
+    <form action="loginAction.jsp" method="post">
     <input type="text" name="name" placeholder="Enter Name" required>
     <input type="email" name="email" placeholder="Enter Email" required>
     <input type="number" name="mobilenumber" placeholder="Enter Mobile Number" required>
     <select name="securityQuestion" required="required">
-    <option value="What was your first car?">What was your first car?</option>
-    <option value="What was your first dog name?">What was your first dog name?</option>
+    <option value="What was your first car?">What was your first car or bike name?</option>
+    <option value="What was your first dog name?">What was your dog name?</option>
     </select>
     <input type="text" name="answer" placeholder="Enter Answer" required>
     <input type="password" name="password" placeholder="Enter password" required>
     <input type="submit" value="sigup">
     </form>
-      <h2><a href="">Login</a></h2>
+     <h2><a href="login.jsp">Login</a></h2>
   </div>
   <div class='whysign'>
 <%
@@ -27,7 +27,7 @@ String msg=request.getParameter("msg");
 if("valid".equals(msg))
 {
 %>
-<h1>Successfully Registered</h1>
+<h1><span style="color: green;">Successfully Registered</span></h1>
 <% } 
 if("invalid".equals(msg))
 {

@@ -5,20 +5,46 @@
 <title>ForgotPassword</title>
 </head>
 <body>
-<div id='container'>
-  <div class='signup'>
-     
-      <h2><a href="">Login</a></h2>
-  </div>
-  <div class='whyforgotPassword'>
-   
-<h1>Password Changed Successfully!</h1>
+	<div id='container'>
+		<div class='signup'>
+			<form action="forgotPasswordAction.jsp" method="post">
+				<input type="email" name="email" placeholder="Enter Email" required>
+				<input type="number" name="mobilenumber"
+					placeholder="Enter Mobile Number" required> <select
+					name="securityQuestion" required="required">
+					<option value="What was your first car?">What was your car
+						or bike name?</option>
+					<option value="What was your first dog name?">What was
+						your dog name?</option>
+				</select> <input type="text" name="answer" placeholder="Enter Answer"
+					required> <input type="password" name="newpassword"
+					placeholder="Enter  new password" required> 
+					<input type="submit"
+					value="Save">
+			</form>
 
-<h1>Some thing Went Wrong! Try Again !</h1>
-
-    <h2>Online Shopping</h2>
-    <p>The Online Shopping System is the application that allows the users to shop online without going to the shops to buy them.</p>
-  </div>
-</div>
+			<h2>
+				<a href="login.jsp">Login</a>
+			</h2>
+		</div>
+		<div class='whyforgotPassword'>
+			<%
+			String msg = request.getParameter("msg");
+			if ("done".equals(msg)) {
+			%>
+			<h1>Password Changed Successfully!</h1>
+			<%
+			}
+			if ("invalid".equals(msg)) {
+			%>
+			<h1>Some thing Went Wrong! Try Again !</h1>
+			<%
+			}
+			%>
+			<h2>Online Shopping</h2>
+			<p>The Online Shopping System is the application that allows the
+				users to shop online without going to the shops to buy them.</p>
+		</div>
+	</div>
 </body>
 </html>
